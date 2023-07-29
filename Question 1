@@ -1,0 +1,41 @@
+/*Write a program such that it takes a lower limit and upper limit as input and prints all the intermiadate palindrome numbers.
+TEST CASE 1
+Input : 
+10  80
+Expected Output : 
+11 22 33 44 55 66 77  */
+
+//SOLUTION IN C++
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int lower, upper,original,n,rem;
+    //int rem = 0;
+    int reverse = 0;
+    cout<<"Enter lower limit : ";
+    cin>>lower;
+    cout<<"enter upper limit : ";
+    cin>>upper;
+    for (int i=lower; i<upper; i++)
+    {
+        original = i;
+         n = original;
+        while(n!=0)
+        {
+            rem = n % 10;
+            reverse = reverse *10 + rem;
+            n = n/10;
+            //rem = 0;
+        }
+        
+        //cout<<original<<" "<<reverse<<endl;
+       if (original == reverse)
+        {
+          cout<<reverse<<" ";
+          reverse = 0;
+        }
+        reverse = 0;
+    }
+}
