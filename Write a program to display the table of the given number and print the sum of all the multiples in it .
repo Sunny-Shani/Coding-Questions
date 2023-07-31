@@ -1,0 +1,24 @@
+//Write a program to display the table of the given number and print the sum of all the multiples in it .
+/* TEST CASE
+input : 5 
+expected output : 5 10 15 20 25 30 ........50
+275
+*/
+
+SOLUTION IN C++
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,sum=0;
+    cin>>n;
+    for (int i=1; i<=10; i++)
+    {
+        int table = n * i;
+        sum = sum + table;
+        cout<<table<<" ";
+        
+    }
+    cout<<endl<<sum;
+}
