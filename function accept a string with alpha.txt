@@ -1,0 +1,33 @@
+function accept a string with alphabets and hyphens, move all the hyphens in front of the string
+input : Move-Hyphens-To-Front
+output : ---MoveHyphensToFront
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+string passString(string a)
+{
+    int n = a.length();
+    string one,two;
+    for (int i=0; i<n; i++)
+    {
+        if (a[i]=='-') {
+            one = one + a[i];
+        }
+        else {
+            two = two + a[i];
+            
+        }
+    }
+    return one + two;
+}
+
+int main()
+{
+    string a;
+    cout<<"Enter string : ";
+    cin>>a;
+    string str = passString(a);
+    cout<<str;
+}
