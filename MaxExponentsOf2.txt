@@ -1,0 +1,38 @@
+//Maximum Exponents of 2, you are given 2 numbers lower and upper both are inclusive i.e 7 to 12
+//calculate maximum exponents of 2 for each number ans return the number which has the highest
+//exponents of 2
+//Example : lower limit = 7 and upper limit = 12
+//Answer would be 8, hint : Do LCM
+
+//Solution In C++
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int MaxExponents(int a, int b){
+    int num,maxExpo=-1,maxnum = -1;;
+    for(int i=a; i<=b; i++){
+        num = i;
+        int count = 0;
+        if(i==0){continue;}
+        while(num % 2 ==0){
+            num = num/2;
+            count++;
+        }
+        if(count>maxExpo)
+        {
+            maxExpo = count;
+            maxnum = i;
+        }
+    }
+    return maxnum;
+}
+
+int main()
+{
+    int upper, lower;
+    cin>>lower>>upper;
+    cout<<MaxExponents(lower, upper);
+
+    return 0;
+}
